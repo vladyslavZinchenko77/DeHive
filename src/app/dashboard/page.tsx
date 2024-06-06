@@ -1,13 +1,16 @@
-import React from 'react';
+import { FC } from 'react';
+import { Flex } from '@chakra-ui/react';
 import MarketOverview from './components/MarketOverview/MarketOverview';
-import Chart from '@/components/common/Chart/Chart';
+import RecentActivities from './components/RecentActivities/RecentActivities';
 
-const Dashboard = () => {
+const Dashboard: FC = () => {
   return (
-    <div>
-      Dashboard
-      <MarketOverview />
-    </div>
+    <>
+      <Flex justifyContent={'space-between'} alignItems={'center'}>
+        <MarketOverview />
+        <RecentActivities />
+      </Flex>
+    </>
   );
 };
 
