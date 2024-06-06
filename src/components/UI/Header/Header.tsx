@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Flex, Select } from '@chakra-ui/react';
+import { Flex, Divider } from '@chakra-ui/react';
 import GradientButton from '@/components/common/GradientButton/GradientButton';
 import Logo from '@/components/common/Logo/Logo';
 import logoSvg from '../../../../public/svg/logo.svg';
@@ -21,17 +21,22 @@ const Header: FC<HeaderProps> = ({
   onButtonClick,
 }) => {
   return (
-    <Flex align="center" justify="space-between" p="4">
-      <Logo logo={logoSvg} title={title} />
-      <Flex align="center">
-        <CustomSelect
-          marginRight={5}
-          options={options}
-          onSelectChange={onSelectChange}
-        />
-        <GradientButton onClick={onButtonClick}>Connect wallet</GradientButton>
+    <>
+      <Flex align="center" justify="space-between" p="4">
+        <Logo logo={logoSvg} title={title} />
+        <Flex align="center">
+          <CustomSelect
+            marginRight={5}
+            options={options}
+            onSelectChange={onSelectChange}
+          />
+          <GradientButton onClick={onButtonClick}>
+            Connect wallet
+          </GradientButton>
+        </Flex>
       </Flex>
-    </Flex>
+      <Divider />
+    </>
   );
 };
 
