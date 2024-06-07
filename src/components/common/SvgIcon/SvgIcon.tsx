@@ -12,6 +12,7 @@ import spiralSvg from '../../../../public/svg/spiral.svg';
 import helmSvg from '../../../../public/svg/helm.svg';
 import scaleSvg from '../../../../public/svg/scale.svg';
 import impulseSvg from '../../../../public/svg/impulse.svg';
+import dashboardSvg from '../../../../public/svg/dashboard.svg';
 
 export type IconType =
   | 'ethereum'
@@ -23,7 +24,8 @@ export type IconType =
   | 'spiral'
   | 'helm'
   | 'scale'
-  | 'impulse';
+  | 'impulse'
+  | 'dashboard';
 
 const SvgIcon: FC<{
   type: IconType;
@@ -43,6 +45,7 @@ const SvgIcon: FC<{
     helm: helmSvg,
     scale: scaleSvg,
     impulse: impulseSvg,
+    dashboard: dashboardSvg,
   }[type];
 
   return (

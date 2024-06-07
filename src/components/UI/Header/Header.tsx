@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, CSSProperties } from 'react';
 import { Flex, Divider } from '@chakra-ui/react';
 import GradientButton from '@/components/common/GradientButton/GradientButton';
 import Logo from '@/components/common/Logo/Logo';
@@ -11,6 +11,7 @@ interface HeaderProps {
   options: string[];
   onSelectChange: (value: string) => void;
   onButtonClick: () => void;
+  style?: CSSProperties;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -19,10 +20,11 @@ const Header: FC<HeaderProps> = ({
   options,
   onSelectChange,
   onButtonClick,
+  style,
 }) => {
   return (
     <>
-      <Flex align="center" justify="space-between" p="4">
+      <Flex align="center" justify="space-between" p="4" style={style}>
         <Logo logo={logoSvg} title={title} />
         <Flex align="center">
           <CustomSelect
