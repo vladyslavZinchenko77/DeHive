@@ -34,7 +34,13 @@ const Metrics: FC = () => {
   return (
     <Box display="flex">
       {metricData.map((metric, index) => (
-        <Box key={index} marginRight={index !== metricData.length - 1 ? 4 : 0}>
+        <Box
+          display={'flex'}
+          flexDirection={'column'}
+          alignItems={'center'}
+          key={index}
+          marginRight={index !== metricData.length - 1 ? 4 : 0}
+        >
           <Text fontSize="24px" color="gray">
             {metric.title}
           </Text>

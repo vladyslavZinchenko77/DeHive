@@ -9,14 +9,24 @@ import MainInfo from './components/MainInfo';
 const TopPerformer: FC = () => {
   return (
     <>
+      <Text fontSize={'30px'}>Top performer</Text>
       <Box
+        position={'relative'}
+        marginTop={'30px'}
         display={'flex'}
         justifyContent={'space-between'}
+        background={'linear-gradient(45deg, #1C1F2E, #2E3650)'}
         alignItems={'center'}
         borderWidth={'1px'}
         borderRadius={'24px'}
         border={'1px solid rgba(255, 255, 255, 0.16)'}
+        py={'35px'}
+        px={'50px'}
       >
+        <SvgIcon
+          type="impulse"
+          style={{ position: 'absolute', top: 20, left: -4 }}
+        />
         <SvgIcon type="top" />
         <MainInfo />
         <Metrics />
@@ -25,10 +35,16 @@ const TopPerformer: FC = () => {
           flexDirection={'column'}
           justifyContent={'space-between'}
         >
-          <GradientButton onClick={() => console.log('Stake')}>
+          <GradientButton
+            style={{ textTransform: 'capitalize' }}
+            onClick={() => console.log('Stake')}
+          >
             {'stake'}
           </GradientButton>
-          <GradientButton onClick={() => console.log('Unstake')}>
+          <GradientButton
+            style={{ marginTop: 30, textTransform: 'capitalize' }}
+            onClick={() => console.log('Unstake')}
+          >
             {'unstake'}
           </GradientButton>
         </Box>

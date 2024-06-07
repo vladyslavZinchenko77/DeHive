@@ -18,10 +18,20 @@ const MainInfo: FC = () => {
           <Text fontSize={'12px'}>QuickSwap</Text>
         </Tag>
         <Tag>
-          <Text fontSize={'12px'}>Volatility:Very Low</Text>
+          <Text fontSize={'12px'}>
+            Volatility:{' '}
+            <Box as="span" marginLeft={1} color={'#00FF73'}>
+              Very Low
+            </Box>
+          </Text>
         </Tag>
         <Tag>
-          <Text fontSize={'12px'}>Risk:Very High</Text>
+          <Text fontSize={'12px'}>
+            Risk:
+            <Box as="span" marginLeft={1} color={'#FC4E7E'}>
+              Very High
+            </Box>
+          </Text>
         </Tag>
       </Box>
       <Text as={'p'} marginTop={5} fontSize={'18px'}>
@@ -31,8 +41,8 @@ const MainInfo: FC = () => {
         <Text as={'p'} fontSize={'32px'} color={'#00FF73'}>
           $10,678.12
         </Text>
-        <Tag>
-          <Flex>
+        <Tag style={{ marginLeft: 1 }}>
+          <Flex gap={2}>
             <SvgIcon type="spiral" />
             <SvgIcon type="helm" />
             <SvgIcon type="scale" />
