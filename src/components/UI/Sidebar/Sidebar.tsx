@@ -1,3 +1,4 @@
+'use client';
 import { Box, Link } from '@chakra-ui/react';
 import React, { FC, CSSProperties } from 'react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
@@ -5,6 +6,7 @@ import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 interface SidebarProps {
   style: CSSProperties;
 }
+
 const Sidebar: FC<SidebarProps> = ({ style }) => {
   return (
     <Box
@@ -13,8 +15,10 @@ const Sidebar: FC<SidebarProps> = ({ style }) => {
       backgroundColor={'#13141D'}
       height={'calc(100vh - 76px)'}
       style={style}
+      display={'flex'}
+      justifyContent={'center'}
     >
-      <Link>
+      <Link marginTop={'40px'}>
         <SvgIcon type="dashboard" />
       </Link>
     </Box>
