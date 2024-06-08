@@ -17,7 +17,6 @@ const TopPerformer: FC = () => {
         justifyContent={'space-between'}
         background={'linear-gradient(45deg, #1C1F2E, #2E3650)'}
         alignItems={'center'}
-        borderWidth={'1px'}
         borderRadius={'24px'}
         border={'1px solid rgba(255, 255, 255, 0.16)'}
         py={'35px'}
