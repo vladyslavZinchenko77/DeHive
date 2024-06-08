@@ -12,7 +12,7 @@ const MarketOverview = () => {
         py={'35px'}
         px={'50px'}
       >
-        <Heading as="h2" size="md" mb="2">
+        <Heading as="h2" fontSize={'30px'} size="md" mb="2">
           Market Overview
         </Heading>
         <Text fontSize="sm" color="gray.500" mb="4">

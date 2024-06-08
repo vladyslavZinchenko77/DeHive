@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import {
   LineChart,
   Line,
@@ -30,7 +30,7 @@ const data: DataPoint[] = [
   { date: 'Aug 08', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
 ];
 
-const Chart: React.FC = () => {
+const Chart: FC = () => {
   const formatYAxis = (tick: number) => `$${tick.toFixed(2)}`;
 
   return (
