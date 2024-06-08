@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import {
   LineChart,
   Line,
@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from 'recharts';
 import { Box } from '@chakra-ui/react';
 
@@ -29,35 +30,36 @@ const data: DataPoint[] = [
   { date: 'Aug 08', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
 ];
 
-const Chart: React.FC = () => {
+const Chart: FC = () => {
   const formatYAxis = (tick: number) => `$${tick.toFixed(2)}`;
 
   return (
     <Box>
-      <LineChart width={800} height={400} data={data}>
-        <Legend verticalAlign="top" align="left" iconType="circle" />
-        <XAxis dataKey="date" />
-        <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip
-          label="Дата"
-          formatter={(value: any) => `$${value.toFixed(2)}`}
-        />
-
-        <Line
-          type="monotone"
-          dataKey="ETH-CORE"
-          stroke="#8884d8"
-          name="ETH-CORE"
-        />
-        <Line type="monotone" dataKey="Poly" stroke="#82ca9d" name="Poly" />
-        <Line
-          type="monotone"
-          dataKey="PolyGaming"
-          stroke="#ff7300"
-          name="PolyGaming"
-        />
-      </LineChart>
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={data}>
+          <Legend verticalAlign="top" align="left" iconType="circle" />
+          <XAxis dataKey="date" />
+          <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip
+            label="Дата"
+            formatter={(value: any) => `$${value.toFixed(2)}`}
+          />
+          <Line
+            type="monotone"
+            dataKey="ETH-CORE"
+            stroke="#8884d8"
+            name="ETH-CORE"
+          />
+          <Line type="monotone" dataKey="Poly" stroke="#82ca9d" name="Poly" />
+          <Line
+            type="monotone"
+            dataKey="PolyGaming"
+            stroke="#ff7300"
+            name="PolyGaming"
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </Box>
   );
 };

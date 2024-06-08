@@ -5,8 +5,14 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 const MarketOverview = () => {
   return (
     <>
-      <Box borderWidth="1px" borderRadius="md" borderColor="gray.200" p="4">
-        <Heading as="h2" size="md" mb="2">
+      <Box
+        borderRadius={'24px'}
+        width={'54%'}
+        border={'1px solid rgba(255, 255, 255, 0.16)'}
+        py={'35px'}
+        px={'50px'}
+      >
+        <Heading as="h2" fontSize={'30px'} size="md" mb="2">
           Market Overview
         </Heading>
         <Text fontSize="sm" color="gray.500" mb="4">
