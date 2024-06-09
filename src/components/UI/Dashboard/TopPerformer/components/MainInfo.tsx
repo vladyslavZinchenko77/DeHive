@@ -11,6 +11,7 @@ const MainInfo: FC = () => {
           DHV / QUICK
         </Text>
         <SvgIcon type="question" style={{ marginLeft: 8 }} />
+        <SvgIcon type="get" style={{ marginLeft: 8 }} />
       </Box>
 
       <Box display={'flex'} gap={1} marginTop={2}>

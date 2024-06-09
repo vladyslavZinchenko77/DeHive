@@ -28,6 +28,10 @@ const data: DataPoint[] = [
   { date: 'Aug 06', 'ETH-CORE': 119, Poly: 83, PolyGaming: 63 },
   { date: 'Aug 07', 'ETH-CORE': 118.5, Poly: 82.5, PolyGaming: 62.5 },
   { date: 'Aug 08', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
+  { date: 'Aug 09', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
+  { date: 'Aug 10', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
+  { date: 'Aug 11', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
+  { date: 'Aug 12', 'ETH-CORE': 119.2, Poly: 80, PolyGaming: 60 },
 ];
 
 const Chart: FC = () => {
@@ -35,7 +39,7 @@ const Chart: FC = () => {
 
   return (
     <Box>
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <Legend verticalAlign="top" align="left" iconType="circle" />
           <XAxis dataKey="date" />
@@ -50,13 +54,21 @@ const Chart: FC = () => {
             dataKey="ETH-CORE"
             stroke="#8884d8"
             name="ETH-CORE"
+            dot={false}
           />
-          <Line type="monotone" dataKey="Poly" stroke="#82ca9d" name="Poly" />
+          <Line
+            type="monotone"
+            dataKey="Poly"
+            stroke="#82ca9d"
+            name="Poly"
+            dot={false}
+          />
           <Line
             type="monotone"
             dataKey="PolyGaming"
             stroke="#ff7300"
             name="PolyGaming"
+            dot={false}
           />
         </LineChart>
       </ResponsiveContainer>

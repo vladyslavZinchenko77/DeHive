@@ -1,41 +1,47 @@
-import React from 'react';
-import { Select } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import { Select, SelectProps } from '@chakra-ui/react';
+import { FC } from 'react';
 
-const CustomSelect = styled(Select)`
-  background-color: #000;
-  color: #00bfff;
-  border: 2px solid #00bfff;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-size: 16px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
+interface CustomSelectProps extends SelectProps {
+  options: string[];
+  onSelectChange: (value: string) => void;
+}
 
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-  }
-`;
-
-const CustomOption = styled.option`
-  background-color: #000;
-  color: #00bfff;
-`;
-
-const PolygonSelect: React.FC = () => {
-  const options = ['Aug 08', 'Aug 09', 'Aug 07', 'Aug 06', 'Aug 10'];
-
+const CustomSelect: FC<CustomSelectProps> = ({
+  options,
+  onSelectChange,
+  ...props
+}) => {
   return (
-    <CustomSelect>
-      {options.map((option) => (
-        <CustomOption key={option} value={option}>
+    <Select
+      {...props}
+      onChange={(e) => onSelectChange(e.target.value)}
+      sx={{
+        borderColor: '#41B7FF',
+        _hover: {
+          borderColor: '#41B7FF',
+        },
+        _focus: {
+          borderColor: '#41B7FF',
+          boxShadow: '0 0 0 1px #41B7FF',
+        },
+        _active: {
+          borderColor: '#41B7FF',
+        },
+        borderRadius: 'full',
+        fontSize: '18px',
+
+        px: 4,
+        cursor: 'pointer',
+      }}
+    >
+      {options.map((option, index) => (
+        <option key={index} value={option}>
           {option}
-        </CustomOption>
+        </option>
       ))}
-    </CustomSelect>
+      ы
+    </Select>
   );
 };
 
-export default PolygonSelect;
+export default CustomSelect;
