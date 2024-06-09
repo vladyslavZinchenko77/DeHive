@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 import GradientButton from '@/components/common/GradientButton/GradientButton';
+import GradientReverseButton from '@/components/common/GradientReverseButton/GradientReverseButton';
 import Metrics from './components/Metrics';
 import MainInfo from './components/MainInfo';
 
@@ -40,12 +41,9 @@ const TopPerformer: FC = () => {
           >
             {'stake'}
           </GradientButton>
-          <GradientButton
-            style={{ marginTop: 30, textTransform: 'capitalize' }}
-            onClick={() => console.log('Unstake')}
-          >
+          <GradientReverseButton style={{ marginTop: 30 }}>
             {'unstake'}
-          </GradientButton>
+          </GradientReverseButton>
         </Box>
       </Box>
     </>
