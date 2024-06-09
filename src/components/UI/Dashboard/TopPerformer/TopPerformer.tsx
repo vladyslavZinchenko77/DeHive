@@ -16,7 +16,9 @@ const TopPerformer: FC = () => {
         marginTop={'30px'}
         display={'flex'}
         justifyContent={'space-between'}
-        background={'linear-gradient(45deg, #1C1F2E, #2E3650)'}
+        background={
+          'linear-gradient(45deg, rgba(28, 31, 46, 0.7), rgba(46, 54, 80, 0.11))'
+        }
         alignItems={'center'}
         borderRadius={'24px'}
         border={'1px solid rgba(255, 255, 255, 0.16)'}

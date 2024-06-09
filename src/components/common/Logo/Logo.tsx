@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Flex, Text, useBreakpointValue, Link } from '@chakra-ui/react';
+import { Flex, Text, Link, useMediaQuery } from '@chakra-ui/react';
 import Image from 'next/image';
 
 interface LogoProps {
@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 const Logo: FC<LogoProps> = ({ logo, title }) => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
 
   return (
     <Link>
