@@ -26,12 +26,11 @@ const GradientButton: FC<GradientButtonProps> = ({
       fontWeight="bold"
       borderRadius="full"
       border={border}
+      transition="background 0.6s ease, transform 0.6s ease"
       px="42"
       py="18"
-      transition={'0.2s'}
       _hover={{
         bgGradient: 'linear(to-r, pink.600, blue.600)',
-        transition: '0.2s',
       }}
     >
       {children}
