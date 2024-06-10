@@ -10,7 +10,9 @@ import MainInfo from './components/MainInfo';
 const TopPerformer: FC = () => {
   return (
     <>
-      <Text fontSize={'30px'}>Top performer</Text>
+      <Text fontSize={'30px'} marginTop={'46px'}>
+        Top performer
+      </Text>
       <Box
         position={'relative'}
         marginTop={'30px'}

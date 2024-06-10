@@ -10,7 +10,7 @@ import logoSvg from '../../public/svg/logo.svg';
 export default function Page() {
   return (
     <>
-      <Header
+      {/* <Header
         style={{
           position: 'fixed',
           top: 0,
@@ -28,7 +28,8 @@ export default function Page() {
           console.log('change');
         }}
         options={['one', 'two', 'three']}
-      />
+      /> */}
+      <Header />
       <Sidebar
         style={{
           position: 'fixed',
@@ -37,7 +38,7 @@ export default function Page() {
           bottom: 0,
         }}
       />
-      <Box margin={'150px 50px 0 262px'}>
+      <Box margin={'150px 50px 0 262px'} paddingBottom={'80px'}>
         <Heading marginBottom={'40px'}>Dashboard</Heading>
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <MarketOverview />

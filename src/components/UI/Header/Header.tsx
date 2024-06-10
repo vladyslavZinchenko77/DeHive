@@ -6,33 +6,35 @@ import logoSvg from '../../../../public/svg/logo.svg';
 import CustomSelect from '@/components/common/CustomSelect/CustomSelect';
 
 interface HeaderProps {
-  logo: string;
-  title: string;
-  options: string[];
-  onSelectChange: (value: string) => void;
-  onButtonClick: () => void;
   style?: CSSProperties;
 }
 
-const Header: FC<HeaderProps> = ({
-  title,
-  options,
-  onSelectChange,
-  onButtonClick,
-  style,
-}) => {
+const options: string[] = ['one', 'two', 'three'];
+const Header: FC<HeaderProps> = ({ style }) => {
   return (
     <>
-      <Box as="header" zIndex={10} borderBottom={'2px solid grey'}>
-        <Flex align="center" justify="space-between" p="4" style={style}>
-          <Logo logo={logoSvg} title={title} />
+      <Box
+        as="header"
+        zIndex={10}
+        borderBottom={'1px solid rgba(255, 255, 255, 0.16)'}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 5,
+          backgroundColor: '#1E1E1E',
+        }}
+      >
+        <Flex align="center" justify="space-between" p="4">
+          <Logo logo={logoSvg} title={'DeHive'} />
           <Flex align="center">
             <CustomSelect
               marginRight={5}
               options={options}
-              onSelectChange={onSelectChange}
+              onSelectChange={() => console.log('Change')}
             />
-            <GradientButton onClick={onButtonClick}>
+            <GradientButton onClick={() => console.log('Connect wallet')}>
               Connect wallet
             </GradientButton>
           </Flex>

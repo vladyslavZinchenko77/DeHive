@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import { Box, Heading, Text, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, Grid } from '@chakra-ui/react';
 import Image from 'next/image';
 import ethereumSvg from '../../../../../public/svg/ethereum.svg';
 import polyGamingSvg from '../../../../../public/svg/poly-game.svg';
 import polyClusterSvg from '../../../../../public/svg/poly-cluster.svg';
 import wmaticWthSvg from '../../../../../public/svg/wmatic-wth.svg';
+import CryptoTitle from './components/CryptoTitle/CryptoTitle';
+import PriceLevel from './components/PriceLevel/PriceLevel';
 
 const dataPoint = [
   {
@@ -95,43 +97,37 @@ const getGradientColor = (priceLevel: string) => {
 const RecentActivities: FC = () => {
   return (
     <Box
-      borderRadius={'24px'}
-      width={'36%'}
-      border={'1px solid rgba(255, 255, 255, 0.16)'}
-      py={'46px'}
-      px={'28px'}
+      borderRadius="24px"
+      backgroundColor="#13141D"
+      width="36%"
+      border="1px solid rgba(255, 255, 255, 0.16)"
+      py="46px"
+      px="28px"
     >
-      <Heading as="h2" fontSize={'30px'} size="md" mb="2">
+      <Heading as="h2" fontSize="30px" size="md" mb="2">
         Recent Activities
       </Heading>
-      <Box as="ul" listStyleType="none" p={0}>
+      <Box as="ul" listStyleType="none" p={0} marginTop={'30px'}>
         {dataPoint.map((item, index) => (
-          <Box key={index} as="li" mb="4" display="flex" alignItems="center">
-            <Image src={item.icon} alt={item.title} width={19} height={20} />
-            <Box ml="3">
-              <Heading as="h2" fontSize="16px" textTransform={'uppercase'}>
-                {item.title}
-              </Heading>
-              <Text fontSize="14px" color={'#4E4F56'}>
-                {item.volume}
+          <Box key={index} as="li" mb="4">
+            <Grid templateColumns="1fr 1fr 1fr" alignItems="center" gap={4}>
+              <CryptoTitle
+                src={item.icon}
+                alt={item.title}
+                title={item.title}
+                volume={item.volume}
+                key={index}
+              />
+              <Text textAlign="left" ml={4}>
+                ${item.price.toFixed(2)}
               </Text>
-            </Box>
-            <Text flex="1" textAlign="right">
-              ${item.price.toFixed(2)}
-            </Text>
-            <Flex flexDirection={'column'} ml="3">
-              <Text
-                backgroundClip="text"
+              <PriceLevel
                 bgGradient={getGradientColor(item.priceLevel)}
-                fontWeight="bold"
-                fontSize="14px"
-              >
-                {item.priceLevel}
-              </Text>
-              <Text fontSize="12px" color={'#4E4F56'}>
-                {item.time}
-              </Text>
-            </Flex>
+                priceLevel={item.priceLevel}
+                time={item.time}
+                key={index}
+              />
+            </Grid>
           </Box>
         ))}
       </Box>

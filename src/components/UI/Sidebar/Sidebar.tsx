@@ -13,6 +13,7 @@ const Sidebar: FC<SidebarProps> = ({ style }) => {
       as="nav"
       width={'212px'}
       backgroundColor={'#13141D'}
+      borderRight={'1px solid rgba(255, 255, 255, 0.16)'}
       height={'calc(100vh - 76px)'}
       style={style}
       display={'flex'}
