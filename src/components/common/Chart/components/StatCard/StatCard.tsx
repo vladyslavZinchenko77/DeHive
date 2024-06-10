@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Flex, Text, border } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
 interface StatCardProps {
   d: string;
@@ -18,12 +18,27 @@ const StatCard: FC<StatCardProps> = ({ d, w, m, y }) => {
       cursor={'pointer'}
     >
       <Flex alignItems="center" justifyContent="space-between" gap={4}>
-        <Text color="gray.500">{d}</Text>
+        <Text
+          color="gray.500"
+          _hover={{ color: '#ffffff', transition: 'color 0.6s' }}
+        >
+          {d}
+        </Text>
         <Box as="span" bg={'#00FF73'} borderRadius={'24px'} py={1} px={3}>
           <Text color="black">{w}</Text>
         </Box>
-        <Text color="gray.500">{m}</Text>
-        <Text color="gray.500">{y}</Text>
+        <Text
+          color="gray.500"
+          _hover={{ color: '#ffffff', transition: 'color 0.6s' }}
+        >
+          {m}
+        </Text>
+        <Text
+          color="gray.500"
+          _hover={{ color: '#ffffff', transition: 'color 0.6s' }}
+        >
+          {y}
+        </Text>
       </Flex>
     </Box>
   );

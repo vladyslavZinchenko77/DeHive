@@ -5,30 +5,10 @@ import Sidebar from '@/components/UI/Sidebar/Sidebar';
 import MarketOverview from '@/components/UI/Dashboard/MarketOverview/MarketOverview';
 import RecentActivities from '@/components/UI/Dashboard/RecentActivities/RecentActivities';
 import TopPerformer from '@/components/UI/Dashboard/TopPerformer/TopPerformer';
-import logoSvg from '../../public/svg/logo.svg';
 
 export default function Page() {
   return (
     <>
-      {/* <Header
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 5,
-          backgroundColor: '#1E1E1E',
-        }}
-        logo={logoSvg}
-        title="DeHive"
-        onButtonClick={() => {
-          console.log('click');
-        }}
-        onSelectChange={() => {
-          console.log('change');
-        }}
-        options={['one', 'two', 'three']}
-      /> */}
       <Header />
       <Sidebar
         style={{

@@ -12,6 +12,7 @@ const PriceLevel: FC<PriceLevelProps> = ({ bgGradient, time, priceLevel }) => {
   return (
     <Flex flexDirection="column" alignItems="flex-start">
       <Text
+        textTransform={'capitalize'}
         backgroundClip="text"
         bgGradient={bgGradient}
         fontWeight="bold"
