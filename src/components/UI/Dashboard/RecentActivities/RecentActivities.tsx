@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { Box, Heading, Text, Flex, Grid } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Heading, Text, useMediaQuery, Grid } from '@chakra-ui/react';
 import ethereumSvg from '../../../../../public/svg/ethereum.svg';
 import polyGamingSvg from '../../../../../public/svg/poly-game.svg';
 import polyClusterSvg from '../../../../../public/svg/poly-cluster.svg';
@@ -95,11 +94,12 @@ const getGradientColor = (priceLevel: string) => {
 };
 
 const RecentActivities: FC = () => {
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <Box
       borderRadius="24px"
       backgroundColor="#13141D"
-      width="36%"
+      width={isMobile ? '100%' : '36%'}
       border="1px solid rgba(255, 255, 255, 0.16)"
       py="46px"
       px="28px"

@@ -9,15 +9,22 @@ import Image from 'next/image';
 import sotsImg from '../../../../public/webp/sots.webp';
 
 const Dashboard = () => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <>
       <Box position={'relative'}>
         <Header />
         {!isMobile && <Sidebar />}
-        <Box margin={'150px 50px 0 262px'} paddingBottom={'80px'}>
+        <Box
+          margin={!isMobile ? '150px 50px 0 262px' : '15px 15px 0 15px'}
+          paddingBottom={'80px'}
+        >
           <Heading marginBottom={'40px'}>Dashboard</Heading>
-          <Flex justifyContent={'space-between'} alignItems={'center'}>
+          <Flex
+            justifyContent={'space-between'}
+            alignItems={'center'}
+            flexDirection={isMobile ? 'column' : 'row'}
+          >
             <MarketOverview />
             <RecentActivities />
           </Flex>

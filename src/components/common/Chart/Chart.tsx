@@ -10,7 +10,8 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import ChartsHeader from './components/ChartsHeader/ChartsHeader';
-import { Box } from '@chakra-ui/react';
+import { Box, useMediaQuery } from '@chakra-ui/react';
+import StatCard from './components/StatCard/StatCard';
 
 interface DataPoint {
   date: string;
@@ -35,6 +36,7 @@ const data: DataPoint[] = [
 ];
 
 const Chart: FC = () => {
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   const formatYAxis = (tick: number) => `$${tick.toFixed(2)}`;
 
   return (
@@ -82,6 +84,7 @@ const Chart: FC = () => {
           />
         </LineChart>
       </ResponsiveContainer>
+      {isMobile && <StatCard d="1D" w="1W" m="1M" y="1Y" />}
     </Box>
   );
 };
