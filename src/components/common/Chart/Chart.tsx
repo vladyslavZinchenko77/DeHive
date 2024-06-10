@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts';
 import ChartsHeader from './components/ChartsHeader/ChartsHeader';
@@ -41,35 +40,41 @@ const Chart: FC = () => {
   return (
     <Box>
       <ChartsHeader sx={{ marginTop: '24px' }} />
+
       <ResponsiveContainer
         width="100%"
         height={300}
-        style={{ marginTop: '30px' }}
+        style={{ marginTop: '30px', cursor: 'pointer' }}
       >
         <LineChart data={data}>
           <XAxis dataKey="date" />
           <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid
+            stroke="rgba(255, 255, 255, 0.16)"
+            strokeDasharray="1 0"
+            horizontal={true}
+            vertical={false}
+          />
           <Tooltip
             label="Дата"
             formatter={(value: any) => `$${value.toFixed(2)}`}
           />
           <Line
-            type="monotone"
+            type="natural"
             dataKey="ETH-CORE"
             stroke="#8884d8"
             name="ETH-CORE"
             dot={false}
           />
           <Line
-            type="monotone"
+            type="natural"
             dataKey="Poly"
             stroke="#82ca9d"
             name="Poly"
             dot={false}
           />
           <Line
-            type="monotone"
+            type="natural"
             dataKey="PolyGaming"
             stroke="#ff7300"
             name="PolyGaming"
