@@ -43,7 +43,7 @@ const Chart: FC = () => {
       <ChartsHeader />
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
-          <Legend verticalAlign="top" align="left" iconType="circle" />
+          {/* <Legend verticalAlign="top" align="left" iconType="circle" /> */}
           <XAxis dataKey="date" />
           <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
           <CartesianGrid strokeDasharray="3 3" />

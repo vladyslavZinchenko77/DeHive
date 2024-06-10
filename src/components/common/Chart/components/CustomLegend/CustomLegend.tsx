@@ -19,8 +19,6 @@ const CustomLegend: FC<CustomLegendProps> = ({ colors }) => {
       <Text color="gray.400">Poly</Text>
       <Circle size={4} bg={colors.PolyGaming} mx={2} />
       <Text color="gray.400">Poly Gaming</Text>
-      <Circle size={4} bg={colors.Add} ml={2} />
-      <Text color="gray.400">Add</Text>
     </Flex>
   );
 };

@@ -1,5 +1,5 @@
 'use client';
-import { Box, Link } from '@chakra-ui/react';
+import { Box, Link, Tooltip } from '@chakra-ui/react';
 import React, { FC, CSSProperties } from 'react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 
@@ -18,9 +18,22 @@ const Sidebar: FC<SidebarProps> = ({ style }) => {
       display={'flex'}
       justifyContent={'center'}
     >
-      <Link marginTop={'40px'}>
-        <SvgIcon type="dashboard" />
-      </Link>
+      <Tooltip
+        label={'Dashboard'}
+        placement="auto-start"
+        bg="#13141D"
+        color="white"
+        borderRadius="24px 24px 24px 0"
+        border={'1px solid rgba(255, 255, 255, 0.16)'}
+        padding="8px 12px"
+        fontSize="14px"
+        boxShadow="md"
+        arrowSize={10}
+      >
+        <Link marginTop={'40px'}>
+          <SvgIcon type="dashboard" />
+        </Link>
+      </Tooltip>
     </Box>
   );
 };
