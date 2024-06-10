@@ -12,13 +12,40 @@ interface CustomLegendProps {
 
 const CustomLegend: FC<CustomLegendProps> = ({ colors }) => {
   return (
-    <Flex align="center" mt={4}>
-      <Circle size={4} bg={colors['ETH-CORE']} mr={2} />
-      <Text color="gray.400">ETH-CORE</Text>
-      <Circle size={4} bg={colors.Poly} mx={2} />
-      <Text color="gray.400">Poly</Text>
+    <Flex>
+      <Flex>
+        <Circle size={4} bg={colors['ETH-CORE']} mr={2} />
+        <Flex flexDirection={'column'}>
+          <Text color="#ffffff" fontSize={'16px'} lineHeight={0}>
+            ETH-CORE
+          </Text>
+          <Text marginTop={'8px'} color={'grey'} fontSize={'14px'}>
+            Ethereum
+          </Text>
+        </Flex>
+      </Flex>
+
+      <Flex>
+        <Circle size={4} bg={colors.Poly} mx={2} />
+        <Flex flexDirection={'column'}>
+          <Text color="#ffffff" fontSize={'16px'} lineHeight={0}>
+            Poly
+          </Text>
+          <Text marginTop={'8px'} color={'grey'} fontSize={'14px'}>
+            Polygon
+          </Text>
+        </Flex>
+      </Flex>
+
       <Circle size={4} bg={colors.PolyGaming} mx={2} />
-      <Text color="gray.400">Poly Gaming</Text>
+      <Flex flexDirection={'column'}>
+        <Text color="#ffffff" fontSize={'16px'} lineHeight={0}>
+          Poly Gaming
+        </Text>
+        <Text marginTop={'8px'} color={'grey'} fontSize={'14px'}>
+          Polygon
+        </Text>
+      </Flex>
     </Flex>
   );
 };

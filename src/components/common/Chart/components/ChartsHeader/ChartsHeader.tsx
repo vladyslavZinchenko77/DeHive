@@ -3,6 +3,10 @@ import { Box } from '@chakra-ui/react';
 import CustomLegend from '../CustomLegend/CustomLegend';
 import StatCard from '../StatCard/StatCard';
 
+interface ChartsHeaderProps {
+  sx?: object;
+}
+
 const colors = {
   'ETH-CORE': '#8884d8',
   Poly: '#82ca9d',
@@ -10,12 +14,13 @@ const colors = {
   Add: '#00ff00',
 };
 
-const ChartsHeader: FC = () => {
+const ChartsHeader: FC<ChartsHeaderProps> = ({ sx }) => {
   return (
     <Box
       display={'flex'}
       justifyContent={'space-between'}
       alignItems={'center'}
+      sx={sx}
     >
       <CustomLegend colors={colors} />
       <StatCard d="1D" w="1W" m="1M" y="1Y" />

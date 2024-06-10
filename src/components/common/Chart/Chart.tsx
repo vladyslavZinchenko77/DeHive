@@ -40,10 +40,13 @@ const Chart: FC = () => {
 
   return (
     <Box>
-      <ChartsHeader />
-      <ResponsiveContainer width="100%" height={300}>
+      <ChartsHeader sx={{ marginTop: '24px' }} />
+      <ResponsiveContainer
+        width="100%"
+        height={300}
+        style={{ marginTop: '30px' }}
+      >
         <LineChart data={data}>
-          {/* <Legend verticalAlign="top" align="left" iconType="circle" /> */}
           <XAxis dataKey="date" />
           <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
           <CartesianGrid strokeDasharray="3 3" />

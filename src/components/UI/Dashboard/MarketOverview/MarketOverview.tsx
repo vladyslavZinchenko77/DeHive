@@ -7,6 +7,7 @@ const MarketOverview = () => {
     <>
       <Box
         borderRadius={'24px'}
+        backgroundColor={'#13141D'}
         width={'54%'}
         border={'1px solid rgba(255, 255, 255, 0.16)'}
         py={'35px'}

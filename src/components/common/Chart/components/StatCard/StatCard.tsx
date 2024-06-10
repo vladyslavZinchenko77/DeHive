@@ -15,6 +15,7 @@ const StatCard: FC<StatCardProps> = ({ d, w, m, y }) => {
       px={4}
       borderRadius={'24px'}
       border={'1px solid rgba(255, 255, 255, 0.16)'}
+      cursor={'pointer'}
     >
       <Flex alignItems="center" justifyContent="space-between" gap={4}>
         <Text color="gray.500">{d}</Text>
