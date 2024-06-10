@@ -10,6 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import ChartsHeader from './components/ChartsHeader/ChartsHeader';
 import { Box } from '@chakra-ui/react';
 
 interface DataPoint {
@@ -39,6 +40,7 @@ const Chart: FC = () => {
 
   return (
     <Box>
+      <ChartsHeader />
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <Legend verticalAlign="top" align="left" iconType="circle" />
