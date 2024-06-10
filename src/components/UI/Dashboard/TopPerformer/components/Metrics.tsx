@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Text, Box, Flex } from '@chakra-ui/react';
+import { Text, Box, Flex, useMediaQuery } from '@chakra-ui/react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 
 interface MetricData {
@@ -31,6 +31,7 @@ const metricData: MetricData[] = [
 ];
 
 const Metrics: FC = () => {
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <Box display="flex">
       {metricData.map((metric, index) => (

@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, useMediaQuery } from '@chakra-ui/react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 import Tag from '@/components/common/Tag/Tag';
 
 const MainInfo: FC = () => {
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <Box>
       <Box display={'flex'}>
@@ -42,13 +43,15 @@ const MainInfo: FC = () => {
         <Text as={'p'} fontSize={'32px'} color={'#00FF73'}>
           $10,678.12
         </Text>
-        <Tag style={{ marginLeft: 1 }}>
-          <Flex gap={2}>
-            <SvgIcon type="spiral" />
-            <SvgIcon type="helm" />
-            <SvgIcon type="scale" />
-          </Flex>
-        </Tag>
+        {!isMobile && (
+          <Tag style={{ marginLeft: 1 }}>
+            <Flex gap={2}>
+              <SvgIcon type="spiral" />
+              <SvgIcon type="helm" />
+              <SvgIcon type="scale" />
+            </Flex>
+          </Tag>
+        )}
       </Flex>
       <Text fontSize={'16px'} color={'gray'}>
         Accumulated rewards

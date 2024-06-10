@@ -1,13 +1,15 @@
 import React from 'react';
 import Chart from '@/components/common/Chart/Chart';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, useMediaQuery } from '@chakra-ui/react';
 
 const MarketOverview = () => {
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <>
       <Box
         borderRadius={'24px'}
-        width={'54%'}
+        backgroundColor={'#13141D'}
+        width={isMobile ? '100%' : '54%'}
         border={'1px solid rgba(255, 255, 255, 0.16)'}
         py={'35px'}
         px={'50px'}

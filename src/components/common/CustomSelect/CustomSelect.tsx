@@ -29,17 +29,23 @@ const CustomSelect: FC<CustomSelectProps> = ({
         },
         borderRadius: 'full',
         fontSize: '18px',
-
         px: 4,
         cursor: 'pointer',
       }}
     >
       {options.map((option, index) => (
-        <option key={index} value={option}>
+        <option
+          key={index}
+          value={option}
+          style={{
+            borderRadius: '24px',
+            backgroundColor: 'black',
+            color: 'white',
+          }}
+        >
           {option}
         </option>
       ))}
-      ы
     </Select>
   );
 };
