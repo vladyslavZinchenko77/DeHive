@@ -8,9 +8,10 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Cross,
 } from 'recharts';
 import ChartsHeader from './components/ChartsHeader/ChartsHeader';
-import { Box, useMediaQuery } from '@chakra-ui/react';
+import { Box, border, useMediaQuery } from '@chakra-ui/react';
 import StatCard from './components/StatCard/StatCard';
 
 interface DataPoint {
@@ -39,6 +40,29 @@ const Chart: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
   const formatYAxis = (tick: number) => `$${tick.toFixed(2)}`;
 
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      const currentData = payload[0].payload;
+      return (
+        <div
+          className="custom-tooltip"
+          style={{
+            borderRadius: '24px',
+            backgroundColor: '#13141D',
+            padding: 10,
+            border: '1px solid rgba(255, 255, 255, 0.16)',
+          }}
+        >
+          <p className="label">{`Дата: ${label}`}</p>
+          <p className="desc">{`ETH-CORE: $${currentData['ETH-CORE']}`}</p>
+          <p className="desc">{`Poly: $${currentData.Poly}`}</p>
+          <p className="desc">{`PolyGaming: $${currentData.PolyGaming}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <Box>
       <ChartsHeader sx={{ marginTop: '24px' }} />
@@ -58,8 +82,12 @@ const Chart: FC = () => {
             vertical={false}
           />
           <Tooltip
-            label="Дата"
-            formatter={(value: any) => `$${value.toFixed(2)}`}
+            content={<CustomTooltip />}
+            cursor={{
+              strokeDasharray: '3 3',
+              stroke: '#8884d8',
+              strokeWidth: 2,
+            }}
           />
           <Line
             type="natural"
