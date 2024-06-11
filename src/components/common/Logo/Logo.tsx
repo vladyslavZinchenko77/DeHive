@@ -11,7 +11,7 @@ const Logo: FC<LogoProps> = ({ logo, title }) => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
 
   return (
-    <Link>
+    <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
       <Flex direction={isMobile ? 'column' : 'row'} align="center">
         <Image loading="lazy" src={logo} alt={title} width="40" height="40" />
         <Text
