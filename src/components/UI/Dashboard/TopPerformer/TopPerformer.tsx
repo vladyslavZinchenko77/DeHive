@@ -9,11 +9,13 @@ import MainInfo from './components/MainInfo';
 
 const TopPerformer: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
+
   return (
     <>
       <Text fontSize={'30px'} marginTop={'46px'}>
         Top performer
       </Text>
+
       <Box
         position={'relative'}
         marginTop={'30px'}
@@ -21,7 +23,7 @@ const TopPerformer: FC = () => {
         flexDirection={isMobile ? 'column' : 'row'}
         justifyContent={'space-between'}
         background={
-          'linear-gradient(45deg, rgba(28, 31, 46, 0.7), rgba(46, 54, 80, 0.11))'
+          'linear-gradient(45deg, rgba(28, 31, 46, 1), rgba(30, 30, 30, 1))'
         }
         alignItems={'center'}
         borderRadius={'24px'}
@@ -37,10 +39,12 @@ const TopPerformer: FC = () => {
         <MainInfo />
         <Metrics />
         <Box
+          marginTop={isMobile ? '30px' : 0}
           display={'flex'}
           flexDirection={isMobile ? 'row' : 'column'}
-          justifyContent={'space-between'}
-          alignItems={isMobile ? 'center' : ''}
+          justifyContent={isMobile ? 'space-between' : 'center'}
+          alignItems={'center'}
+          width={isMobile ? '100%' : 'auto'}
         >
           <GradientButton
             style={{ textTransform: 'capitalize' }}
@@ -48,7 +52,13 @@ const TopPerformer: FC = () => {
           >
             {'stake'}
           </GradientButton>
-          <GradientReverseButton style={{ marginTop: isMobile ? 0 : 30 }}>
+          <GradientReverseButton
+            style={{
+              marginTop: isMobile ? 0 : 30,
+              marginLeft: isMobile ? '16px' : 0,
+              width: !isMobile ? '100%' : '',
+            }}
+          >
             {'unstake'}
           </GradientReverseButton>
         </Box>
