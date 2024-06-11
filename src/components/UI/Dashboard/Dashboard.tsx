@@ -30,7 +30,7 @@ const Dashboard = () => {
               justifyContent={'space-between'}
               mx={'15px'}
             >
-              <Text fontSize={'16px'}>TVL:$234.567,26</Text>
+              <Text fontSize={'16px'}>TVL : $234.567,26</Text>
               <Box maxWidth={'180px'}>
                 <CustomSelect
                   marginRight={5}

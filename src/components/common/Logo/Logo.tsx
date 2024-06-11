@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Flex, Text, Link, useMediaQuery } from '@chakra-ui/react';
-import Image from 'next/image';
+import SvgIcon from '../SvgIcon/SvgIcon';
 
 interface LogoProps {
   logo: string;
@@ -13,7 +13,7 @@ const Logo: FC<LogoProps> = ({ logo, title }) => {
   return (
     <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
       <Flex direction={isMobile ? 'column' : 'row'} align="center">
-        <Image loading="lazy" src={logo} alt={title} width="40" height="40" />
+        <SvgIcon type="logo" />
         <Text
           ml={isMobile ? 0 : 4}
           mt={isMobile ? 1 : 0}

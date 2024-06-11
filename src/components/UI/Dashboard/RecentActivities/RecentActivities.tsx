@@ -40,15 +40,14 @@ const RecentActivities: FC = () => {
         Recent Activities
       </Heading>
       <Box as="ul" listStyleType="none" p={0} marginTop={'30px'}>
-        {dataPoint.map((item, index) => (
-          <Box key={index} as="li" mb="4">
+        {dataPoint.map((item) => (
+          <Box key={item.id} as="li" mb="4">
             <Grid templateColumns="1fr 1fr 1fr" alignItems="center" gap={4}>
               <CryptoTitle
                 src={item.icon}
                 alt={item.title}
                 title={item.title}
                 volume={item.volume}
-                key={index}
               />
               <Text textAlign="left" ml={4}>
                 ${item.price.toFixed(2)}
@@ -57,7 +56,6 @@ const RecentActivities: FC = () => {
                 bgGradient={getGradientColor(item.priceLevel)}
                 priceLevel={item.priceLevel}
                 time={item.time}
-                key={index}
               />
             </Grid>
           </Box>
