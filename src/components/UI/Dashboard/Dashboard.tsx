@@ -1,14 +1,16 @@
 import React from 'react';
-import { Box, Heading, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Box, Heading, Flex, Text, useMediaQuery } from '@chakra-ui/react';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import MarketOverview from './MarketOverview/MarketOverview';
 import RecentActivities from './RecentActivities/RecentActivities';
 import TopPerformer from './TopPerformer/TopPerformer';
 import Image from 'next/image';
+import CustomSelect from '@/components/common/CustomSelect/CustomSelect';
 import sotsImg from '../../../../public/webp/sots.webp';
 import lightImg from '../../../../public/webp/light.webp';
 
+const options: string[] = ['polygon', 'polygon', 'polygon'];
 const Dashboard = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
@@ -16,6 +18,31 @@ const Dashboard = () => {
       <Box position={'relative'} marginTop={isMobile ? '140px' : 0}>
         <Header />
         {!isMobile && <Sidebar />}
+        {isMobile && (
+          <Box
+            backgroundColor={'#13141D'}
+            borderBottom={'1px solid rgba(255, 255, 255, 0.16)'}
+            paddingBottom={'10px'}
+          >
+            <Box
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'space-between'}
+              mx={'15px'}
+            >
+              <Text fontSize={'16px'}>TVL:$234.567,26</Text>
+              <Box maxWidth={'180px'}>
+                <CustomSelect
+                  marginRight={5}
+                  onSelectChange={() => {
+                    console.log('Change');
+                  }}
+                  options={options}
+                />
+              </Box>
+            </Box>
+          </Box>
+        )}
         <Box
           margin={!isMobile ? '150px 50px 0 262px' : '15px 15px 0 15px'}
           paddingBottom={'80px'}
@@ -56,8 +83,8 @@ const Dashboard = () => {
               alt="sots"
               style={{
                 position: 'absolute',
-                bottom: 0,
-                right: -130,
+                bottom: -30,
+                right: 0,
                 zIndex: -1,
               }}
             />
