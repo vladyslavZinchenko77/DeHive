@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Box, Flex, Text, useMediaQuery } from '@chakra-ui/react';
 import SvgIcon from '@/components/common/SvgIcon/SvgIcon';
 import Tag from '@/components/common/Tag/Tag';
+import GreenBorderBtn from '@/components/common/GreenBorderBtn/GreenBorderBtn';
 
 const MainInfo: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
@@ -43,6 +44,11 @@ const MainInfo: FC = () => {
         <Text as={'p'} fontSize={'32px'} color={'#00FF73'}>
           $10,678.12
         </Text>
+        {isMobile && (
+          <GreenBorderBtn style={{ fontSize: 12, marginLeft: 4 }}>
+            Claim rewards
+          </GreenBorderBtn>
+        )}
         {!isMobile && (
           <Tag style={{ marginLeft: 1 }}>
             <Flex gap={2}>

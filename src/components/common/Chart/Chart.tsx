@@ -8,12 +8,12 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Cross,
 } from 'recharts';
 import ChartsHeader from './components/ChartsHeader/ChartsHeader';
-import { Box, border, useMediaQuery } from '@chakra-ui/react';
+import { Box, useMediaQuery } from '@chakra-ui/react';
 import StatCard from './components/StatCard/StatCard';
-import { DataPoint, data } from './dataChart';
+import { data } from './dataChart';
+import SvgIcon from '../SvgIcon/SvgIcon';
 
 const Chart: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
@@ -30,12 +30,37 @@ const Chart: FC = () => {
             backgroundColor: '#13141D',
             padding: 10,
             border: '1px solid rgba(255, 255, 255, 0.16)',
+            color: '#fff',
           }}
         >
-          <p className="label">{`Дата: ${label}`}</p>
-          <p className="desc">{`ETH-CORE: $${currentData['ETH-CORE']}`}</p>
-          <p className="desc">{`Poly: $${currentData.Poly}`}</p>
-          <p className="desc">{`PolyGaming: $${currentData.PolyGaming}`}</p>
+          <p className="label">{`date: ${label}`}</p>
+          <div
+            className="desc"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <SvgIcon type="ethereum" />
+            <span
+              style={{ marginLeft: '8px' }}
+            >{`ETH-CORE: $${currentData['ETH-CORE']}`}</span>
+          </div>
+          <div
+            className="desc"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <SvgIcon type="polyCluster" />
+            <span
+              style={{ marginLeft: '8px' }}
+            >{`Poly: $${currentData.Poly}`}</span>
+          </div>
+          <div
+            className="desc"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <SvgIcon type="polyGaming" />
+            <span
+              style={{ marginLeft: '8px' }}
+            >{`PolyGaming: $${currentData.PolyGaming}`}</span>
+          </div>
         </div>
       );
     }
@@ -52,8 +77,14 @@ const Chart: FC = () => {
         style={{ marginTop: '30px', cursor: 'pointer' }}
       >
         <LineChart data={data}>
-          <XAxis dataKey="date" />
-          <YAxis domain={[0, 200]} tickFormatter={formatYAxis} tickCount={9} />
+          {!isMobile && <XAxis dataKey="date" />}
+          {!isMobile && (
+            <YAxis
+              domain={[0, 200]}
+              tickFormatter={formatYAxis}
+              tickCount={9}
+            />
+          )}
           <CartesianGrid
             stroke="rgba(255, 255, 255, 0.16)"
             strokeDasharray="1 0"

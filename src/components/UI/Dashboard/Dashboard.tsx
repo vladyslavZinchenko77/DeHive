@@ -67,7 +67,7 @@ const Dashboard = () => {
                 style={{
                   position: 'absolute',
                   top: -80,
-                  left: -100,
+                  left: 0,
                   zIndex: -1,
                 }}
               />

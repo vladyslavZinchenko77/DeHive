@@ -9,6 +9,7 @@ import MainInfo from './components/MainInfo';
 
 const TopPerformer: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
+
   return (
     <>
       <Text fontSize={'30px'} marginTop={'46px'}>
@@ -42,7 +43,8 @@ const TopPerformer: FC = () => {
           display={'flex'}
           flexDirection={isMobile ? 'row' : 'column'}
           justifyContent={isMobile ? 'space-between' : 'center'}
-          alignItems={isMobile ? 'center' : 'center'}
+          alignItems={'center'}
+          width={isMobile ? '100%' : 'auto'}
         >
           <GradientButton
             style={{ textTransform: 'capitalize' }}
@@ -53,7 +55,8 @@ const TopPerformer: FC = () => {
           <GradientReverseButton
             style={{
               marginTop: isMobile ? 0 : 30,
-              marginLeft: isMobile ? '8px' : 0,
+              marginLeft: isMobile ? '16px' : 0,
+              width: !isMobile ? '100%' : '',
             }}
           >
             {'unstake'}
