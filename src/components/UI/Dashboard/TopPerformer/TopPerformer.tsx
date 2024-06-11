@@ -21,7 +21,7 @@ const TopPerformer: FC = () => {
         flexDirection={isMobile ? 'column' : 'row'}
         justifyContent={'space-between'}
         background={
-          'linear-gradient(45deg, rgba(28, 31, 46, 0.7), rgba(46, 54, 80, 0.11))'
+          'linear-gradient(45deg, rgba(28, 31, 46, 1), rgba(30, 30, 30, 1))'
         }
         alignItems={'center'}
         borderRadius={'24px'}

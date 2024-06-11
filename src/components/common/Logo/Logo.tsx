@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 const Logo: FC<LogoProps> = ({ logo, title }) => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
 
   return (
     <Link>
@@ -16,7 +16,7 @@ const Logo: FC<LogoProps> = ({ logo, title }) => {
         <Image loading="lazy" src={logo} alt={title} width="40" height="40" />
         <Text
           ml={isMobile ? 0 : 4}
-          mt={isMobile ? 2 : 0}
+          mt={isMobile ? 1 : 0}
           fontSize="xl"
           fontWeight="bold"
         >

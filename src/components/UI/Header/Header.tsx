@@ -7,12 +7,13 @@ import logoSvg from '../../../../public/svg/logo.svg';
 import CustomSelect from '@/components/common/CustomSelect/CustomSelect';
 import BurgerIcon from './components/BurgerIcon/BurgerIcon';
 import GradientReverseButton from '@/components/common/GradientReverseButton/GradientReverseButton';
+import GreenBorderBtn from '@/components/common/GreenBorderBtn/GreenBorderBtn';
 
 interface HeaderProps {
   style?: CSSProperties;
 }
 
-const options: string[] = ['one', 'two', 'three'];
+const options: string[] = ['polygon', 'polygon', 'polygon'];
 const Header: FC<HeaderProps> = () => {
   const [isMobile] = useMediaQuery('(max-width: 768px)');
   return (
@@ -43,7 +44,7 @@ const Header: FC<HeaderProps> = () => {
             )}
 
             {isMobile ? (
-              <GradientReverseButton>Connect</GradientReverseButton>
+              <GreenBorderBtn>Connect</GreenBorderBtn>
             ) : (
               <GradientButton onClick={() => console.log('Connect wallet')}>
                 Connect wallet
