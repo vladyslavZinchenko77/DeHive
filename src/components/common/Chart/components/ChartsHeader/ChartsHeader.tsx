@@ -16,7 +16,7 @@ const colors = {
 };
 
 const ChartsHeader: FC<ChartsHeaderProps> = ({ sx }) => {
-  const [isMobile] = useMediaQuery('(max-width: 1279px)');
+  const [isTablet] = useMediaQuery('(max-width: 1500px)');
   return (
     <Box
       display={'flex'}
@@ -25,8 +25,8 @@ const ChartsHeader: FC<ChartsHeaderProps> = ({ sx }) => {
       sx={sx}
     >
       <CustomLegend colors={colors} />
-      {!isMobile ? <BtnAdd /> : ''}
-      {!isMobile ? <StatCard d="1D" w="1W" m="1M" y="1Y" /> : ''}
+      {!isTablet ? <BtnAdd /> : ''}
+      {!isTablet ? <StatCard d="1D" w="1W" m="1M" y="1Y" /> : ''}
     </Box>
   );
 };
