@@ -14,6 +14,7 @@ const TopPerformer: FC = () => {
       <Text fontSize={'30px'} marginTop={'46px'}>
         Top performer
       </Text>
+
       <Box
         position={'relative'}
         marginTop={'30px'}
@@ -37,10 +38,11 @@ const TopPerformer: FC = () => {
         <MainInfo />
         <Metrics />
         <Box
+          marginTop={isMobile ? '30px' : 0}
           display={'flex'}
           flexDirection={isMobile ? 'row' : 'column'}
-          justifyContent={'space-between'}
-          alignItems={isMobile ? 'center' : ''}
+          justifyContent={isMobile ? 'space-between' : 'center'}
+          alignItems={isMobile ? 'center' : 'center'}
         >
           <GradientButton
             style={{ textTransform: 'capitalize' }}
@@ -48,7 +50,12 @@ const TopPerformer: FC = () => {
           >
             {'stake'}
           </GradientButton>
-          <GradientReverseButton style={{ marginTop: isMobile ? 0 : 30 }}>
+          <GradientReverseButton
+            style={{
+              marginTop: isMobile ? 0 : 30,
+              marginLeft: isMobile ? '8px' : 0,
+            }}
+          >
             {'unstake'}
           </GradientReverseButton>
         </Box>

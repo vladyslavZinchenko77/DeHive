@@ -59,5 +59,3 @@ const GreenBorderBtn: FC<GradientReverseButtonProps> = ({
 };
 
 export default GreenBorderBtn;
-
-// linear-gradient(34.42deg, rgb(65, 183, 255),rgb(0, 255, 115));

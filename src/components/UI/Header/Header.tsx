@@ -15,7 +15,7 @@ interface HeaderProps {
 
 const options: string[] = ['polygon', 'polygon', 'polygon'];
 const Header: FC<HeaderProps> = () => {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <>
       <Box

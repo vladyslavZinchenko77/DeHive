@@ -97,6 +97,7 @@ const RecentActivities: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
     <Box
+      marginTop={isMobile ? '30px' : 0}
       borderRadius="24px"
       backgroundColor="#13141D"
       width={isMobile ? '100%' : '36%'}

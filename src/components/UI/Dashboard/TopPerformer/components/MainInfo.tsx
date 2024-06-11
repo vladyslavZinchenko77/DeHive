@@ -15,20 +15,20 @@ const MainInfo: FC = () => {
         <SvgIcon type="get" style={{ marginLeft: 8 }} />
       </Box>
 
-      <Box display={'flex'} gap={1} marginTop={2}>
+      <Box display={'flex'} gap={isMobile ? '2px' : '4px'} marginTop={2}>
         <Tag>
-          <Text fontSize={'12px'}>QuickSwap</Text>
+          <Text fontSize={isMobile ? '10px' : '12px'}>QuickSwap</Text>
         </Tag>
         <Tag>
-          <Text fontSize={'12px'}>
-            Volatility:{' '}
+          <Text fontSize={isMobile ? '10px' : '12px'}>
+            Volatility:
             <Box as="span" marginLeft={1} color={'#00FF73'}>
               Very Low
             </Box>
           </Text>
         </Tag>
         <Tag>
-          <Text fontSize={'12px'}>
+          <Text fontSize={isMobile ? '10px' : '12px'}>
             Risk:
             <Box as="span" marginLeft={1} color={'#FC4E7E'}>
               Very High
