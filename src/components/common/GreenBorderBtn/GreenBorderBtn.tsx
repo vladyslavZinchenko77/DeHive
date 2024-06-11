@@ -55,7 +55,11 @@ const GreenBorderBtn: FC<GradientReverseButtonProps> = ({
   children,
   style,
 }) => {
-  return <ButtonWrapper style={style}>{children}</ButtonWrapper>;
+  return (
+    <ButtonWrapper type="button" style={style}>
+      {children}
+    </ButtonWrapper>
+  );
 };
 
 export default GreenBorderBtn;

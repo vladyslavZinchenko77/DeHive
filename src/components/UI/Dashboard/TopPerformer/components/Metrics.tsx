@@ -97,7 +97,11 @@ const metricData: MetricData[] = [
 const Metrics: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
-    <Box display="flex" flexDirection={isMobile ? 'column' : 'row'}>
+    <Box
+      display="flex"
+      flexDirection={isMobile ? 'column' : 'row'}
+      width={isMobile ? '100%' : ''}
+    >
       {metricData.map((metric, index) => (
         <Box
           display={'flex'}
@@ -107,7 +111,7 @@ const Metrics: FC = () => {
           key={index}
           marginRight={index !== metricData.length - 1 ? 4 : 0}
         >
-          <Text fontSize={'24px'} color="gray">
+          <Text fontSize={isMobile ? '20px' : '24px'} color="gray">
             {metric.title}
           </Text>
 
