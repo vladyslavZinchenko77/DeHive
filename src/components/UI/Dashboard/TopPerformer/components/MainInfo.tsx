@@ -7,8 +7,12 @@ import GreenBorderBtn from '@/components/common/GreenBorderBtn/GreenBorderBtn';
 const MainInfo: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
   return (
-    <Box>
-      <Box display={'flex'}>
+    <Box width={isMobile ? '100%' : ''}>
+      <Box
+        display={'flex'}
+        justifyContent={isMobile ? 'center' : ''}
+        width={isMobile ? '100%' : ''}
+      >
         <Text as={'p'} fontSize={24}>
           DHV / QUICK
         </Text>
@@ -16,7 +20,13 @@ const MainInfo: FC = () => {
         <SvgIcon type="get" style={{ marginLeft: 8 }} />
       </Box>
 
-      <Box display={'flex'} gap={isMobile ? '2px' : '4px'} marginTop={2}>
+      <Box
+        width={isMobile ? '100%' : ''}
+        display={'flex'}
+        justifyContent={isMobile ? 'space-between' : ''}
+        gap={isMobile ? '2px' : '4px'}
+        marginTop={2}
+      >
         <Tag>
           <Text fontSize={isMobile ? '10px' : '12px'}>QuickSwap</Text>
         </Tag>
@@ -40,7 +50,13 @@ const MainInfo: FC = () => {
       <Text as={'p'} marginTop={5} fontSize={'18px'}>
         Your rewards:
       </Text>
-      <Flex alignItems={'center'} marginTop={1}>
+      {/* ///////////////////////////////////////////////////////////////////////////////// */}
+      <Flex
+        alignItems={'center'}
+        marginTop={1}
+        justifyContent={isMobile ? 'space-between' : ''}
+        width={isMobile ? '100%' : ''}
+      >
         <Text as={'p'} fontSize={'32px'} color={'#00FF73'}>
           $10,678.12
         </Text>
@@ -59,6 +75,7 @@ const MainInfo: FC = () => {
           </Tag>
         )}
       </Flex>
+
       <Text fontSize={'16px'} color={'gray'}>
         Accumulated rewards
       </Text>
