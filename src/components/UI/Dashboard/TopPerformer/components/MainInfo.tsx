@@ -6,6 +6,8 @@ import GreenBorderBtn from '@/components/common/GreenBorderBtn/GreenBorderBtn';
 
 const MainInfo: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
+  const [isTablet] = useMediaQuery('(max-width: 1500px)');
+
   return (
     <Box width={isMobile ? '100%' : ''}>
       <Box
@@ -34,7 +36,7 @@ const MainInfo: FC = () => {
           <Text fontSize={isMobile ? '10px' : '12px'}>
             Volatility:
             <Box as="span" marginLeft={1} color={'#00FF73'}>
-              Very Low
+              {isTablet ? 'Low' : 'Very Low'}
             </Box>
           </Text>
         </Tag>
@@ -42,7 +44,7 @@ const MainInfo: FC = () => {
           <Text fontSize={isMobile ? '10px' : '12px'}>
             Risk:
             <Box as="span" marginLeft={1} color={'#FC4E7E'}>
-              Very High
+              {isTablet ? 'High' : 'Very High'}
             </Box>
           </Text>
         </Tag>
@@ -57,7 +59,7 @@ const MainInfo: FC = () => {
         justifyContent={isMobile ? 'space-between' : ''}
         width={isMobile ? '100%' : ''}
       >
-        <Text as={'p'} fontSize={'32px'} color={'#00FF73'}>
+        <Text as={'p'} fontSize={isMobile ? '20px' : '32px'} color={'#00FF73'}>
           $10,678.12
         </Text>
         {isMobile && (

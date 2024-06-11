@@ -17,6 +17,7 @@ import SvgIcon from '../SvgIcon/SvgIcon';
 
 const Chart: FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
+  const [isTablet] = useMediaQuery('(max-width: 1500px)');
   const formatYAxis = (tick: number) => `$${tick.toFixed(2)}`;
 
   const CustomTooltip = ({ active, payload, label }: any) => {
@@ -122,7 +123,7 @@ const Chart: FC = () => {
           />
         </LineChart>
       </ResponsiveContainer>
-      {isMobile && <StatCard d="1D" w="1W" m="1M" y="1Y" />}
+      {isTablet && <StatCard d="1D" w="1W" m="1M" y="1Y" />}
     </Box>
   );
 };

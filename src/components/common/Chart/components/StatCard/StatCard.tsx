@@ -10,8 +10,9 @@ interface StatCardProps {
 
 const StatCard: FC<StatCardProps> = ({ d, w, m, y }) => {
   const [isMobile] = useMediaQuery('(max-width: 1279px)');
+  const [isTablet] = useMediaQuery('(max-width: 1500px)');
   return (
-    <Box display={isMobile ? 'flex' : 'block'} justifyContent={'center'}>
+    <Box display={isTablet ? 'flex' : 'block'} justifyContent={'center'}>
       <Box
         marginTop={isMobile ? '30px' : 0}
         py={2}
