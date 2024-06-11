@@ -15,6 +15,7 @@ import impulseSvg from '../../../../public/svg/impulse.svg';
 import dashboardSvg from '../../../../public/svg/dashboard.svg';
 import getSvg from '../../../../public/svg/GET.svg';
 import plusSvg from '../../../../public/svg/plus.svg';
+import logoSvg from '../../../../public/svg/logo.svg';
 
 export type IconType =
   | 'ethereum'
@@ -29,7 +30,8 @@ export type IconType =
   | 'impulse'
   | 'dashboard'
   | 'get'
-  | 'plus';
+  | 'plus'
+  | 'logo';
 
 const SvgIcon: FC<{
   type: IconType;
@@ -52,6 +54,7 @@ const SvgIcon: FC<{
     dashboard: dashboardSvg,
     get: getSvg,
     plus: plusSvg,
+    logo: logoSvg,
   }[type];
 
   return (

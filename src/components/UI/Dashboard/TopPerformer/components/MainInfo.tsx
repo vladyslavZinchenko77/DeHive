@@ -50,7 +50,7 @@ const MainInfo: FC = () => {
       <Text as={'p'} marginTop={5} fontSize={'18px'}>
         Your rewards:
       </Text>
-      {/* ///////////////////////////////////////////////////////////////////////////////// */}
+
       <Flex
         alignItems={'center'}
         marginTop={1}
